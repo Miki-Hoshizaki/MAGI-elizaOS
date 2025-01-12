@@ -1,14 +1,8 @@
-# Eliza
+# MAGI integration for Eliza
 
-## Edit the character files
+### Run the agent
 
-Open `src/character.ts` to modify the default character. Uncomment and edit.
-
-### Custom characters
-
-To load custom characters instead:
-- Use `pnpm start --characters="path/to/your/character.json"`
-- Multiple character files can be loaded simultaneously
+`pnpm start --characters="characters/magi.character.json"`
 
 ### Add clients
 

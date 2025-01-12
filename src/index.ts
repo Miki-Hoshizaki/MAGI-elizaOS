@@ -127,6 +127,18 @@ const checkPortAvailable = (port: number): Promise<boolean> => {
 };
 
 const startAgents = async () => {
+  // Set OpenAI configurations
+  const apiBase = process.env.OPENAI_API_BASE || "http://127.0.0.1:8000/v1";
+  
+  // Override fetch to modify the base URL
+  const originalFetch = global.fetch;
+  global.fetch = async (url: string | URL | Request, init?: RequestInit) => {
+    if (typeof url === 'string' && url.includes('api.openai.com')) {
+      url = url.replace('https://api.openai.com', apiBase);
+    }
+    return originalFetch(url, init);
+  };
+  
   const directClient = new DirectClient();
   let serverPort = parseInt(settings.SERVER_PORT || "3000");
   const args = parseArguments();

@@ -1,0 +1,32 @@
+{
+  "name": "magi",
+  "clients": [
+    "telegram",
+    "twitter"
+  ],
+  "modelProvider": "openai",
+  "settings": {
+      "secrets": {
+        "OPENAI_API_BASE": "http://127.0.0.1:8000/v1"
+      }
+  },
+  "bio": [
+    
+    ],
+    "lore": [
+
+    ],
+    "knowledge": [],
+  "messageExamples": [],
+  "plugins": [],
+  "topics": [
+  ],
+  "postExamples": [""],
+  "style": {
+    "all": [""],
+    "chat": [""],
+    "post": [""]
+},
+  "adjectives": [
+  ]
+}
